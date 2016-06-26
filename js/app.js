@@ -18,11 +18,11 @@ app.controller('appController', ['$scope', function($scope) {
 ]);
 */
 
-
+/*
 var app = angular.module('app', []);
 app.controller('appController',['$scope',  function($scope) {
 	$log.debug('test');
-	
+
 
 	$scope.number = function(num) {
 		$scope.button += num;
@@ -35,6 +35,7 @@ app.controller('appController',['$scope',  function($scope) {
 		}
 
 	}]);
+*/
 /*
 var app = angular.module('app', []);
 app.controller('appController', function() {
@@ -42,3 +43,6 @@ app.controller('appController', function() {
 	vm.testText = '1234';
 })
 	*/
+
+
+    var app = angular.module('calculator', []);

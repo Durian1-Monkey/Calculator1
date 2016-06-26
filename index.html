@@ -1,72 +1,48 @@
-  <!DOCTYPE html>
-  <html lang="en" ng-app="calculator">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Calculator1</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"
-          integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
-    <!--
-    <link rel="stylesheet" href="app.css">
-    -->
-  </head>
-  <body ng-controller="calController">
-  <div class="container">
-    <div class="row">
-      <!--
-      <div class="col-md-3" ng-repeat=" i in [7, 4 ,1, 0] track by $index">
-        <button class="btn btn-secondary" ng-repeat = "j in [8, 5, 2, 0] track by $index">
-
-        </button>
-      </div>
-      -->
-      <p class="col-md-12">{{ num }}</p>
-      <br>
-        <button class="col-md-3" ng-repeat="i in [7, 8, 9] track by $index" ng-click="number(i)">
-          {{ i }}
-        </button>
-        <button class="col-md-1" ng-repeat="i in ['÷'] track by $index" ng-click="">
-          {{ i }}
-        </button>
-        <button class="col-md-3" ng-repeat="i in [4, 5 ,6] track by $index" ng-click="number(i)">
-          {{ i }}
-        </button>
-        <button class="col-md-1" ng-repeat="i in ['-'] track by $index" ng-click="operator(i)">
-          {{ i }}
-        </button>
-        <button class="col-md-3" ng-repeat="i in [1, 2, 3] track by $index" ng-click="number(i)">
-          {{ i }}
-        </button>
-        <button class="col-md-1" ng-repeat="i in ['+'] track by $index" ng-click="plus(i)">
-          {{ i }}
-        </button>
-        <button class="col-md-3" ng-repeat="i in ['.', 'X', '='] track by $index" ng-click="operator(i)">
-          {{ i }}
-        </button>
-        <button class="col-md-1" ng-repeat="i in [0] track by $index" ng-click="number(i)">
-          {{ i }}
-        </button>
-    </div>
+<!DOCTYPE html>
+<html lang="en" ng-app="calculator">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculator1</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"
+        integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body ng-controller="calController">
+<div class="container">
+  <div class="row">
+    <p class="col-md-12">{{ num }}</p>
+    <br>
+    <button class="col-md-3" ng-repeat="i in [7, 8, 9] track by $index" ng-click="number(i)">
+      {{ i }}
+    </button>
+    <button class="col-md-3" ng-repeat="i in ['+'] track by $index" ng-click="plus(i)">
+      {{ i }}
+    </button>
+    <button class="col-md-3" ng-repeat="i in [4, 5 ,6] track by $index" ng-click="number(i)">
+      {{ i }}
+    </button>
+    <button class="col-md-3" ng-repeat="i in ['-'] track by $index" ng-click="subtract(i)">
+      {{ i }}
+    </button>
+    <button class="col-md-3" ng-repeat="i in [1, 2, 3] track by $index" ng-click="number(i)">
+      {{ i }}
+    </button>
+    <button class="col-md-3" ng-repeat="i in ['÷'] track by $index" ng-click="divide(i)">
+      {{ i }}
+    </button>
+    <button class="col-md-3" ng-repeat="i in [0] track by $index" ng-click="number(i)">
+      {{ i }}
+    </button>
+    <button class="col-md-3" ng-repeat="i in ['C', '=', 'X'] track by $index" ng-click="operator(i)">
+      {{ i }}
+    </button>
   </div>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-  <script>
-
-    angular.module('calculator', []).controller('calController', ['$scope', '$log', '$parse', function($scope) {
-      $scope.num =0;
-      $scope.calController = function($log) {
-        $log.debug('Test');
-      }
-      $scope.number = function(numb) {
-        $scope.num += String(numb);
-        console.log(numb);
-      }
-      $scope.plus = function($parse){
-        $log.debug( $parse($scope.num) + $parse($scope.num));
-      }
-    }]);
-
-  </script>
-  </body>
-  </html>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/controller/controller.js"></script>
+</body>
+</html>
