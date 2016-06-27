@@ -9,40 +9,18 @@
   <link rel="stylesheet" href="app.css">
 </head>
 <body ng-controller="calController">
-<div class="container">
-  <div class="row">
-    <p class="col-md-12">{{ num }}</p>
-    <br>
-    <button class="col-md-3" ng-repeat="i in [7, 8, 9] track by $index" ng-click="number(i)">
-      {{ i }}
-    </button>
-    <button class="col-md-3" ng-repeat="i in ['+'] track by $index" ng-click="plus(i)">
-      {{ i }}
-    </button>
-    <button class="col-md-3" ng-repeat="i in [4, 5 ,6] track by $index" ng-click="number(i)">
-      {{ i }}
-    </button>
-    <button class="col-md-3" ng-repeat="i in ['-'] track by $index" ng-click="subtract(i)">
-      {{ i }}
-    </button>
-    <button class="col-md-3" ng-repeat="i in [1, 2, 3] track by $index" ng-click="number(i)">
-      {{ i }}
-    </button>
-    <button class="col-md-3" ng-repeat="i in ['÷'] track by $index" ng-click="divide(i)">
-      {{ i }}
-    </button>
-    <button class="col-md-3" ng-repeat="i in [0] track by $index" ng-click="number(i)">
-      {{ i }}
-    </button>
-    <button class="col-md-3" ng-repeat="i in ['C', '=', 'X'] track by $index" ng-click="operator(i)">
-      {{ i }}
-    </button>
-  </div>
-</div>
+
+  <div number-button></div>
+
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <script src="js/app.js"></script>
 <script src="js/controller/controller.js"></script>
+
+
+
 </body>
 </html>

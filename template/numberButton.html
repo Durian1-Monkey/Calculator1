@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+      <p class="col-md-12">{{ num }}</p>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="row">
+        <button class="col-md-4" ng-repeat="i in [7, 8, 9] track by $index" ng-click="number(i)">
+          {{ i }}
+        </button>
+        <button class="col-md-4" ng-repeat="i in [4, 5 ,6] track by $index" ng-click="number(i)">
+          {{ i }}
+        </button>
+        <button class="col-md-4" ng-repeat="i in [1, 2, 3] track by $index" ng-click="number(i)">
+          {{ i }}
+        </button>
+        <button class="col-md-2" ng-repeat="i in [0] track by $index" ng-click="number(i)">
+          {{ i }}
+        </button>
+        <button class="col-md-2" ng-repeat="i in ['.'] track by $index" ng-click="number(i)">
+          {{ i }}
+        </button>
+        <button class="col-md-4" ng-repeat="i in ['C'] track by $index" ng-click="operator(i)">
+          {{ i }}
+        </button>
+        <button class="col-md-4" ng-repeat="i in ['='] track by $index" ng-click="operator(i)">
+          {{ i }}
+        </button>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="row">
+        <button class="col-md-12" ng-repeat="i in ['+'] track by $index" ng-click="plus(i)">
+          {{ i }}
+        </button>
+        <button class="col-md-12" ng-repeat="i in ['-'] track by $index" ng-click="subtract(i)">
+          {{ i }}
+        </button>
+        <button class="col-md-12" ng-repeat="i in ['÷'] track by $index" ng-click="divide(i)">
+          {{ i }}
+        </button>
+        <button class="col-md-12" ng-repeat="i in ['X'] track by $index" ng-click="multiple(i)">
+          {{ i }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
