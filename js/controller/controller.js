@@ -1,8 +1,7 @@
 /**
  * Created by morita on 6/26/2016 AD.
  */
-var app = angular.module('calculator', []);
-app.controller('calController', function ($scope, $log) {
+app.controller('calController', ['$scope', '$log', function ($scope, $log) {
     "ngInject";
     $scope.num = ' ';
     $scope.calController = function ($log) {
@@ -38,7 +37,7 @@ app.controller('calController', function ($scope, $log) {
         if (operator === "=") {
             console.log($scope.num);
             console.log($scope.num[1]);
-            if ($scope.num[1] === "*" | "/" && $scope.num[0] === "*" | "/" ) {
+            if ($scope.num[1] === "*" | "/" && $scope.num[0] === "*" | "/") {
                 console.log("no number is before * or / operators.");
                 $scope.num = 0;
             }
@@ -54,10 +53,11 @@ app.controller('calController', function ($scope, $log) {
             $log.debug(operator, "is clicked.");
         }
     }
-});
+}]);
 
 app.directive('numberButton', function () {
     return {
         templateUrl: 'template/numberButton.html'
     };
 });
+    
